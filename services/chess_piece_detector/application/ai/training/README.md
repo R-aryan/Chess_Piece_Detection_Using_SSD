@@ -1,6 +1,7 @@
 # Chess Piece Detection Using SSD.
 
 - The training notebook can be found [here](https://colab.research.google.com/drive/1MBJ-LLIAKxWHqVZQYTKphrfei8H1PsOq?usp=sharing)
+- The inference can be found [here](https://colab.research.google.com/drive/14aQNu0RgeLslQFH6VYhW59FJ_kVtMkFg?usp=sharing)
 - Due to system/hardware limitations it was not possible to perform training locally.
 - So google colab and google drive was used for training purpose.
 - Although the TFOD(Tensorflow Object detection Framework) setup can be done locally on te machine.
