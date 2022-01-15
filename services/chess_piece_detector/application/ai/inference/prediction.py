@@ -98,7 +98,7 @@ class ChessDetector:
 
         return open_coded_base64
 
-    def run(self, image_path):
+    def predict(self, image_path):
         image_np = self.__load_image_into_numpy_array(image_path)
         output_dict = self.__run_inference_for_single_image(self.model, image_np)
 

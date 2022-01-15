@@ -1,0 +1,5 @@
+[15-Jan-2022 : 16:02:30] INFO [werkzeug._log:225]  * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+[15-Jan-2022 : 16:02:48] INFO [werkzeug._log:225] 127.0.0.1 - - [15/Jan/2022 16:02:48] "GET / HTTP/1.1" 200 -
+[15-Jan-2022 : 16:03:19] INFO [root.info:27] INFO : Received Post Request for inference--!!
+[15-Jan-2022 : 16:04:00] INFO [root.info:27] INFO : Image stored in directory -- ../images/input_images/--with image name--input_image_12.639079.jpg
+[15-Jan-2022 : 16:07:22] INFO [werkzeug._log:225] 127.0.0.1 - - [15/Jan/2022 16:07:22] "POST /predict HTTP/1.1" 200 -
