@@ -32,3 +32,5 @@ class Settings:
 
     # Path to label map file
     PATH_TO_LABELS = APPLICATION_PATH + "ai" + sep + "data" + sep + "labelmap.pbtxt"
+
+    detection_mask_threshold = 0.5
