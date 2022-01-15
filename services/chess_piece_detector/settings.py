@@ -1,6 +1,7 @@
 import os
 
 from common.logging.console_logger import ConsoleLogger
+import tensorflow as tf
 
 
 class Settings:
@@ -34,3 +35,8 @@ class Settings:
     PATH_TO_LABELS = APPLICATION_PATH + "ai" + sep + "data" + sep + "labelmap.pbtxt"
 
     detection_mask_threshold = 0.5
+
+    if len(tf.config.list_physical_devices('GPU')) > 0:
+        DEVICE = 'GPU'
+    else:
+        DEVICE = 'CPU'

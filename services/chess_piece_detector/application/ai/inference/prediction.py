@@ -9,7 +9,6 @@ from object_detection.utils import label_map_util
 from object_detection.utils import ops as utils_ops
 from object_detection.utils import visualization_utils as vis_util
 
-
 from utils.utils import encodeImageIntoBase64
 from services.chess_piece_detector.settings import Settings
 
@@ -24,17 +23,26 @@ class ChessDetector:
     def __init__(self):
         self.settings = Settings
         # loading the model weights
+        self.settings.logger.info("Loading Model Weights to--->" + str(self.settings.DEVICE))
         self.model = tf.saved_model.load(self.settings.MODEL_WEIGHTS_PATH)
 
         self.category_index = label_map_util.create_category_index_from_labelmap(self.settings.PATH_TO_LABELS,
                                                                                  use_display_name=True)
+        self.settings.logger.info("Model Weights Loaded to--->" + str(self.settings.DEVICE) + "--Successfully--!!")
 
     def __load_image_into_numpy_array(self, path):
-        img_data = tf.io.gfile.GFile(path, 'rb').read()
-        image = Image.open(BytesIO(img_data))
-        (im_width, im_height) = image.size
-        return np.array(image.getdata()).reshape(
-            (im_height, im_width, 3)).astype(np.uint8)
+        self.settings.logger.info("Loading image--" + path + "--as a numpy array--!!")
+        try:
+            img_data = tf.io.gfile.GFile(path, 'rb').read()
+            image = Image.open(BytesIO(img_data))
+            (im_width, im_height) = image.size
+            self.settings.logger.info("Image-->" + path + "--Loaded as numpy array successfully--!!")
+            return np.array(image.getdata()).reshape(
+                (im_height, im_width, 3)).astype(np.uint8)
+        except BaseException as ex:
+            ex = str(ex)
+            self.settings.logger.error("Error occurred while loading Image--> " + path + "--as numpy array--!!" + ex)
+            return ex
 
     def __run_inference_for_single_image(self, model, image):
         # The input needs to be a tensor, convert it using `tf.convert_to_tensor`.
@@ -94,10 +102,19 @@ class ChessDetector:
         return open_coded_base64
 
     def predict(self, image_path):
-        image_np = self.__load_image_into_numpy_array(image_path)
-        output_dict = self.__run_inference_for_single_image(self.model, image_np)
+        self.settings.logger.info("Performing Inference on Image-->" + str(image_path))
+        try:
+            image_np = self.__load_image_into_numpy_array(image_path)
+            output_dict = self.__run_inference_for_single_image(self.model, image_np)
 
-        output_base64 = self.__visualize_inference(output_dict, image_np)
+            output_base64 = self.__visualize_inference(output_dict, image_np)
 
-        result = {"image": output_base64.decode('utf-8')}
-        return result
+            result = {"image": output_base64.decode('utf-8')}
+            self.settings.logger.info("Inference on Image-->" + str(image_path) + "--performed successfully--!!")
+            return result
+
+        except BaseException as ex:
+            ex = str(ex)
+            self.settings.logger.error(
+                "Following Error occurred while performing inference on  Image--> " + image_path + "---" + ex)
+            return ex
