@@ -25,3 +25,10 @@ class Settings:
 
     # setting up logger
     logger = ConsoleLogger(filename=LOGS_DIRECTORY)
+
+    # Path to frozen detection graph .pb file, which contains the model that is used
+    # for object detection.
+    MODEL_WEIGHTS_PATH = APPLICATION_PATH + "ai" + sep + "weights" + sep + "converted_trained_weights" + sep + "saved_model"
+
+    # Path to label map file
+    PATH_TO_LABELS = APPLICATION_PATH + "ai" + sep + "data" + sep + "labelmap.pbtxt"

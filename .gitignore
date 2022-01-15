@@ -117,4 +117,4 @@ dmypy.json
 
 *.pb
 
-weights/
+converted_trained_weights/
