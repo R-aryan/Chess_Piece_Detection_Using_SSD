@@ -16,3 +16,16 @@
 [15-Jan-2022 : 16:47:07] INFO [root.info:27] INFO : Output Image stored in directory -- ../images/output_images/----with image name--output_image_07.107957.jpg--Successfully--!!
 [15-Jan-2022 : 16:47:07] INFO [root.info:27] INFO : Inference on Image-->../images/input_images/input_image_02.265833.jpg--performed successfully--!!
 [15-Jan-2022 : 16:47:07] INFO [werkzeug._log:225] 127.0.0.1 - - [15/Jan/2022 16:47:07] "POST /predict HTTP/1.1" 200 -
+[16-Jan-2022 : 00:34:48] INFO [root.info:27] INFO : Loading Model Weights to--->CPU
+[16-Jan-2022 : 00:35:04] INFO [root.info:27] INFO : Model Weights Loaded to--->CPU--Successfully--!!
+[16-Jan-2022 : 00:35:04] INFO [werkzeug._log:225]  * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+[16-Jan-2022 : 00:35:14] INFO [werkzeug._log:225] 127.0.0.1 - - [16/Jan/2022 00:35:14] "GET / HTTP/1.1" 200 -
+[16-Jan-2022 : 00:37:22] INFO [root.info:27] INFO : Received Post Request for inference--!!
+[16-Jan-2022 : 00:37:22] INFO [root.info:27] INFO : Image stored in directory -- ../images/input_images/--with image name--input_image_22.326876.jpg
+[16-Jan-2022 : 00:37:22] INFO [root.info:27] INFO : Performing Inference on Image-->../images/input_images/input_image_22.326876.jpg
+[16-Jan-2022 : 00:37:22] INFO [root.info:27] INFO : Loading image--../images/input_images/input_image_22.326876.jpg--as a numpy array--!!
+[16-Jan-2022 : 00:37:22] INFO [root.info:27] INFO : Image-->../images/input_images/input_image_22.326876.jpg--Loaded as numpy array successfully--!!
+[16-Jan-2022 : 00:37:26] INFO [root.info:27] INFO : Writing Out Image to Directory -->../images/output_images/
+[16-Jan-2022 : 00:37:26] INFO [root.info:27] INFO : Output Image stored in directory -- ../images/output_images/----with image name--output_image_26.704504.jpg--Successfully--!!
+[16-Jan-2022 : 00:37:26] INFO [root.info:27] INFO : Inference on Image-->../images/input_images/input_image_22.326876.jpg--performed successfully--!!
+[16-Jan-2022 : 00:37:26] INFO [werkzeug._log:225] 127.0.0.1 - - [16/Jan/2022 00:37:26] "POST /predict HTTP/1.1" 200 -
