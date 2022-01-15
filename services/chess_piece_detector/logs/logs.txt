@@ -3,3 +3,16 @@
 [15-Jan-2022 : 16:03:19] INFO [root.info:27] INFO : Received Post Request for inference--!!
 [15-Jan-2022 : 16:04:00] INFO [root.info:27] INFO : Image stored in directory -- ../images/input_images/--with image name--input_image_12.639079.jpg
 [15-Jan-2022 : 16:07:22] INFO [werkzeug._log:225] 127.0.0.1 - - [15/Jan/2022 16:07:22] "POST /predict HTTP/1.1" 200 -
+[15-Jan-2022 : 16:46:25] INFO [root.info:27] INFO : Loading Model Weights to--->CPU
+[15-Jan-2022 : 16:46:44] INFO [root.info:27] INFO : Model Weights Loaded to--->CPU--Successfully--!!
+[15-Jan-2022 : 16:46:44] INFO [werkzeug._log:225]  * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+[15-Jan-2022 : 16:46:54] INFO [werkzeug._log:225] 127.0.0.1 - - [15/Jan/2022 16:46:54] "GET / HTTP/1.1" 200 -
+[15-Jan-2022 : 16:47:02] INFO [root.info:27] INFO : Received Post Request for inference--!!
+[15-Jan-2022 : 16:47:02] INFO [root.info:27] INFO : Image stored in directory -- ../images/input_images/--with image name--input_image_02.265833.jpg
+[15-Jan-2022 : 16:47:02] INFO [root.info:27] INFO : Performing Inference on Image-->../images/input_images/input_image_02.265833.jpg
+[15-Jan-2022 : 16:47:02] INFO [root.info:27] INFO : Loading image--../images/input_images/input_image_02.265833.jpg--as a numpy array--!!
+[15-Jan-2022 : 16:47:02] INFO [root.info:27] INFO : Image-->../images/input_images/input_image_02.265833.jpg--Loaded as numpy array successfully--!!
+[15-Jan-2022 : 16:47:07] INFO [root.info:27] INFO : Writing Out Image to Directory -->
+[15-Jan-2022 : 16:47:07] INFO [root.info:27] INFO : Output Image stored in directory -- ../images/output_images/----with image name--output_image_07.107957.jpg--Successfully--!!
+[15-Jan-2022 : 16:47:07] INFO [root.info:27] INFO : Inference on Image-->../images/input_images/input_image_02.265833.jpg--performed successfully--!!
+[15-Jan-2022 : 16:47:07] INFO [werkzeug._log:225] 127.0.0.1 - - [15/Jan/2022 16:47:07] "POST /predict HTTP/1.1" 200 -

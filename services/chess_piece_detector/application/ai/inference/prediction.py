@@ -94,12 +94,22 @@ class ChessDetector:
         return self.__write_output_to_directory(image_np)
 
     def __write_output_to_directory(self, image):
-        output_image_name = "output_image_" + str(datetime.now()).split(':')[-1] + ".jpg"
-        output_filename = self.settings.OUTPUT_IMAGE_PATH + output_image_name
-        cv2.imwrite(output_filename, image)
-        open_coded_base64 = encodeImageIntoBase64(output_filename)
+        self.settings.logger.info("Writing Out Image to Directory -->"+self.settings.OUTPUT_IMAGE_PATH)
+        try:
+            output_image_name = "output_image_" + str(datetime.now()).split(':')[-1] + ".jpg"
+            output_filename = self.settings.OUTPUT_IMAGE_PATH + output_image_name
+            cv2.imwrite(output_filename, image)
+            self.settings.logger.info(
+                "Output Image stored in directory -- " + self.settings.OUTPUT_IMAGE_PATH + "----with image name--"
+                + output_image_name + "--Successfully--!!")
+            open_coded_base64 = encodeImageIntoBase64(output_filename)
+            return open_coded_base64
 
-        return open_coded_base64
+        except BaseException as ex:
+            ex = str(ex)
+            self.settings.logger.error(
+                "Following Error occurred while writing Output image to directory--> " + ex)
+            return ex
 
     def predict(self, image_path):
         self.settings.logger.info("Performing Inference on Image-->" + str(image_path))
