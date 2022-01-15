@@ -41,4 +41,4 @@ class Settings:
     else:
         DEVICE = 'CPU'
 
-
+    inference_notebbok = "https://colab.research.google.com/drive/14aQNu0RgeLslQFH6VYhW59FJ_kVtMkFg?usp=sharing"
