@@ -40,3 +40,5 @@ class Settings:
         DEVICE = 'GPU'
     else:
         DEVICE = 'CPU'
+
+
