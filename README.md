@@ -1,7 +1,5 @@
 # Chess Piece Detection Using SSD
 
-# Cards Detection Using FASTER RCNN
-
 - End to end object detection project using SSD(Single Shot Detection).
 - The training is done using [TFOD2.0(Tensorflow object detection) framework](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/).
 - The application is served as an REST API using Flask.
